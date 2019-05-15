@@ -11,5 +11,5 @@
 
 echo "Setuid files:"
 echo "============="
-find / -perm / u=s;ls -l
+find / -user root -perm 4000 -exec ls -ldb {} \;
 exit
