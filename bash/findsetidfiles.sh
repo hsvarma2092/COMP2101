@@ -6,32 +6,25 @@
 
 # Task 2 for the exercise is to modify it to also display the 10 largest files in the system, sorted by their sizes
 # The listing should include the file name, owner, and size in MBytes and be displayed after the listings of setuid and setgid files
-
-echo "Setuid files:"
+echo "============="
+echo "Task-1 Setuid files:"
 echo "============="
 find / -type f -executable -perm -4000 -ls 2>/dev/null | sort -k 3
 
 echo ""
-
-echo "now getting setgid file"
-echo "Setgid files:"
+sleep 5
+echo "============="
+echo "Task-1 setgid file"
 echo "============="
 sleep 5
 
 find / -type f -executable -perm -2000 -ls 2>/dev/null | sort -k 3
 
 echo""
-
-echo "Now displaying the 10 largest files in the system"
+sleep 5
+echo "============="
+echo "Task-2 Now displaying the 10 largest files in the system"
 echo "============="
 sleep 5
 
-find / 2>/dev/null -type f -exec ls -l --block-size=M {} + | sort -rh -k 5 | head -n 10 | awk '{print $5, $3, $9}'
-
-
-#ls -l --block-size=M / 2>/dev/null | sort -h -r | head -n 10
-
-#du --block-size=M / 2>/dev/null | sort -h -r | head -n 10
-
-du -ha | sort -h -r | head -n 10
-#find -type f -exec ls -l --block-size=M {} + | sort -rh -k 5 | head -n 10 | awk '{print $5, $3, $9}'
+find / 2>/dev/null -type f -exec ls -l --block-size=M {} + | sort -rh -k 5 | head -n 10 | awk '{print $3, $5, $9}'
