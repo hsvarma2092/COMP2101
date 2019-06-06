@@ -11,24 +11,35 @@
 #      and the other output lines should be similarly helpful to the user
 
 # roll the dice and display the result
+echo "--------------------------------------------------"
 echo "pair of six sided dice"
+sleep 1
+
 echo "
 Rolling..."
 sleep 3
 
-echo " $(( RANDOM % 6 + 1)), $(( RANDOM % 6 + 1 )) rolled
-"
-echo " 5 six-sided dice"
+echo "$(( RANDOM % 6 + 1)), $(( RANDOM % 6 + 1 )) rolled"
+echo "--------------------------------------------------"
+sleep 1
 
-echo "Rolling... "
+echo "
+5 six-sided dice"
+sleep 1
+
+echo "Rolling..."
 sleep 3
 
-echo "$(( RANDOM % 6 + 1)), $(( RANDOM % 6 + 1 )), $(( RANDOM % 6 + 1)), $(( RANDOM % 6 + 1)), $(( RANDOM % 6 + 1)) rolled
-"
+echo "$(( RANDOM % 6 + 1)), $(( RANDOM % 6 + 1 )), $(( RANDOM % 6 + 1)), $(( RANDOM % 6 + 1)), $(( RANDOM % 6 + 1)) rolled"
+echo "--------------------------------------------------"
+sleep 1
 
-echo "single 20 sided dice"
+echo "
+single 20 sided dice"
+sleep 1
 
-echo "rolling"
+echo "rolling..."
 sleep 3
-echo "$(( RANDOM % 20 + 1)) rolled
-"
+
+echo "$(( RANDOM % 20 + 1)) rolled"
+echo "--------------------------------------------------"
