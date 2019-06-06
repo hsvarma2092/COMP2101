@@ -25,10 +25,9 @@ EOF
 
 echo "----------------------------------------------------------------------------------------------"
 echo "now geting and unzip the tgz file"
-sleep 5
 
 # make a Pictures directory if we don't have one - assumes we have a home directory
-test -d ~/Pictures || mkdir ~/Pictures  # test -d mean FILE exists and is a directory
+test -d ~/Pictures || mkdir ~/Pictures
 
 # download a zipfile of pictures to our Pictures directory if it isn't already there - assumes you are online
 test -f ~/Pictures/pics.tgz || wget -q -O ~/Pictures/pics.tgz https://zonzorp.net/pics.tgz  # here is change
