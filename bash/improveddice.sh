@@ -25,6 +25,6 @@ sum=$(( die1 + die2 ))
 average=$(echo $sum/2 | bc -l)
 # display the results
 sleep 2
-echo "Rolled $die1, $die2 for a $sum"
+echo "Rolled $die1, $die2 and the sum is $sum"
 sleep 2
 echo "Rolled $die1, $die2 and the average is $average"

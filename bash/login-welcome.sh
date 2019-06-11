@@ -9,21 +9,17 @@
 #   Use a format like this:
 #   It is HH:MM AM on weekday.
 
-###############
-# Variables   #
-###############
-
 title="$USER"
 time=$(date +'%A, %I:%M %p')
 
 hostname=$(hostname)
 weekday=$(date +%u)
-###############
-# Main        #
-###############
-cat <<EOF
-Welcome to planet $hostname, $title!
-EOF
+
+#cat <<EOF
+
+cowsay Welcome to planet $hostname, $title!
+
+#EOF
 if [ "$weekday" = "6" ] || [ "$weekday" = "7" ]
 then
    echo "It is $time on Weekend."
