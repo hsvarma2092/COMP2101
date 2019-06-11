@@ -33,7 +33,6 @@ test -d ~/Pictures || mkdir ~/Pictures
 test -f ~/Pictures/pics.tgz || wget -q -O ~/Pictures/pics.tgz https://zonzorp.net/pics.tgz  # here is change
 
 # unpack the downloaded zipfile if it is there, then delete the local copy of the zipfile
-#test -f ~/Pictures/pics.zip && tar xvzf ~/Pictures -o -q ~/Pictures/pics.tgz && rm ~/Pictures/pics.tgz #here is change
 test -f ~/Pictures/pics.tgz && tar --extract --file ~/Pictures/pics.tgz -C ~/Pictures && rm ~/Pictures/pics.tgz
 
 # Make a report on what we have in the Pictures directory
