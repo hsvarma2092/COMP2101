@@ -7,6 +7,15 @@
 #       the count. If the script receives a QUIT signal, tell the user they found the secret
 #       to getting out of the script and exit immediately.
 
+trap reset 2
+trap foundSecret 3
+
+#Task : on Signal QUIT
+function foundSecret {
+	echo "You found out secret to getting out of script."
+	exit
+}
+
 # Task: Explain in a comment how the line with the word moose in it works.
 
 #### Variables
@@ -21,6 +30,12 @@ numberOfSleeps=10 # how many sleeps to wait for before quitting for inactivity
 #   error-message ["some text to print to stderr"]
 #
 function error-message {
+
+#Task : It prints programName and first args
+#	> redirect standard output (implicit 1>)
+#	& what comes next is a file descriptor, not a file (only for right hand side of >)
+#	2 stderr file descriptor number
+#	Redirect stdout from echo command to stderr
         echo "${programName}: ${1:-Unknown Error - a moose bit my sister once...}" >&2
 }
 
@@ -56,7 +71,7 @@ while [ $# -gt 0 ]; do
             usage
             exit
             ;;
-        *)
+        * )
             usage
             error-exit "$1 not a recognized option"
     esac
@@ -73,9 +88,15 @@ fi
 
 sleepCount=$numberOfSleeps
 
+#Task : on Signal INT
+function reset {
+	echo "You are not allowed to interrupt the count."
+	sleepCount=$(($numberOfSleeps+1))
+}
+
 while [ $sleepCount -gt 0 ]; do
-    echo "Waiting $sleepCount more times for signals"
+    echo "Waiting $sleepCount more+++++++"
     sleep $sleepTime
     sleepCount=$((sleepCount - 1))
 done
-echo "Wait counter expired, exiting peacefully"
+echo "Wait counter done, exiting Now"
