@@ -27,4 +27,4 @@ average=$(echo $sum/2 | bc -l)
 sleep 2
 echo "Rolled $die1, $die2 and the sum is $sum"
 sleep 2
-echo "Rolled $die1, $die2 and the average is $average"
+echo "Rolled $die1, $die2 and the average $average"
